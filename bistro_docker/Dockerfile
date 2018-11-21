@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y bluez bluetooth usbutils --fix-missing
 
 # clone repo
 RUN git clone https://github.com/Freigeistlab/bistro.git
-RUN cd bistro
+WORKDIR /bistro
 RUN pip3 install -r requirements.txt
 
 
