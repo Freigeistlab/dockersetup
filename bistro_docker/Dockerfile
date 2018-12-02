@@ -16,6 +16,7 @@ RUN git clone https://github.com/Freigeistlab/bistro.git
 WORKDIR /bistro
 RUN pip3 install -r requirements.txt
 
+RUN export PYTHONIOENCODING=UTF-8
 
 # commands to run:
 # sudo docker build -t bistro-container .
