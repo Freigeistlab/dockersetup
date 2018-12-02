@@ -16,6 +16,16 @@ RUN git clone https://github.com/Freigeistlab/bistro.git
 WORKDIR /bistro
 RUN pip3 install -r requirements.txt
 
+# Ensure that we always use UTF-8 and with Canadian English locale
+RUN locale-gen en_CA.UTF-8
+
+COPY ./default_locale /etc/default/locale
+RUN chmod 0755 /etc/default/locale
+
+ENV LC_ALL=en_CA.UTF-8
+ENV LANG=en_CA.UTF-8
+ENV LANGUAGE=en_CA.UTF-8
+
 RUN export PYTHONIOENCODING=UTF-8
 
 # commands to run:
